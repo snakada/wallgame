@@ -60,11 +60,6 @@ document.addEventListener('keydown', event => {
 const defaultSpeed = 500;
 
 /**
- * タイマーの加速量を定義しておきます。
- */
-//const speedStep = -2;
-
-/**
  * タイマーを始動させます。
  */
 const step = speed => {
