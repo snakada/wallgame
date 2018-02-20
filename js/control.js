@@ -36,20 +36,20 @@ document.addEventListener('keydown', event => {
 
   switch(event.key) {
     case 'ArrowUp':
-      moveSnakeUp();
+      movePlayerUp();
       break;
     case 'ArrowDown':
-      moveSnakeDown();
+      movePlayerDown();
       break;
     case 'ArrowLeft':
-      moveSnakeLeft();
+      movePlayerLeft();
       break;
     case 'ArrowRight':
-      moveSnakeRight();
+      movePlayerRight();
       break;
   }
 
-  if(snakeHitWall()) {
+  if(playerHitWall()) {
     setGameover();
   }
 });
@@ -79,7 +79,7 @@ const step = speed => {
       $field.appendChild(createWall(0));
     }
 
-    if(snakeHitWall()) {
+    if(playerHitWall()) {
       setGameover();
     }
 

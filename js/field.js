@@ -6,7 +6,7 @@ const $field = createDivWithId('field');
 /**
  * アプリDOMにスネークDOMを組み込んでおきます。
  */
-$field.appendChild($snake);
+$field.appendChild($player);
 
 /**
  * アプリDOMに壁DOMを組み込んでみます。
