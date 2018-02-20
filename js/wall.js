@@ -1,23 +1,34 @@
+/*
+ * 壁の高さを配列で定義しておきます。
+ */
+const wallHeights = [
+  [20, 100],
+  [40, 200],
+  [60, 180],
+  [80, 100],
+  [100, 40],
+  [100, 80],
+  [100, 100],
+  [160, 40],
+  [160, 80],
+];
+
+/**
+ * 壁の高さ配列からランダムなインデックスを返します。
+ */
+const getRandomIndex = () => Math.floor(Math.random() * wallHeights.length);
+
+/**
+ * 壁の高さを定義されたものからランダムに選んで返します。
+ */
+const getWallHeightRandomly = () => wallHeights[getRandomIndex()];
+
 /**
  * 壁DOMを生成して返します。
  */
-const createWall = (right) => {
-  // 壁の高さを定義しておきます。
-  const heights = [
-    [20, 100],
-    [40, 200],
-    [60, 180],
-    [80, 100],
-    [100, 40],
-    [100, 80],
-    [100, 100],
-    [160, 40],
-    [160, 80],
-  ];
-
-  // 壁の高さを定義されたものから選んでおきます。
-  const randomIndex = Math.floor(Math.random() * heights.length);
-  const currentHeight = heights[randomIndex];
+const createWall = right => {
+  // 壁の高さをランダムに取得しておきます。
+  const currentHeight = getWallHeightRandomly();
 
   // 壁(枠)DOMを生成します。
   const $wall = createDivWithClassName('wall');
