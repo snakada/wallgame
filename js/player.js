@@ -62,8 +62,8 @@ const movePlayer = (moveTop, moveLeft) => {
   const newLeft = left + moveLeft;
   const newRight = right - moveLeft;
   if(allowMovePlayer(newTop, newBottom, newLeft, newRight)) {
-    $player.style.top = `${newTop}px`;
-    $player.style.left = `${newLeft}px`;
+    setStyle($player, 'top', `${newTop}px`);
+    setStyle($player, 'left', `${newLeft}px`);
   }
 };
 

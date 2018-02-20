@@ -32,15 +32,15 @@ const createWall = right => {
 
   // 壁(枠)DOMを生成します。
   const $wall = createDivWithClassName('wall');
-  $wall.style.right = `${right}px`;
+  setStyle($wall, 'right', `${right}px`);
 
   // 壁(上)DOMを生成します。
   const $wallTop = createDivWithClassName('wallTop');
-  $wallTop.style.height = `${currentHeight[0]}px`;
+  setStyle($wallTop, 'height', `${currentHeight[0]}px`);
 
   // 壁(下)DOMを生成します。
   const $wallBottom = createDivWithClassName('wallBottom');
-  $wallBottom.style.height = `${currentHeight[1]}px`;
+  setStyle($wallBottom, 'height', `${currentHeight[1]}px`);
 
   // 壁(枠)DOMに壁(上)DOMと壁(下)DOMを組み込みます。
   $wall.appendChild($wallTop);
@@ -68,7 +68,7 @@ const getPositionsAllWalls = () => {
  */
 const moveWall = $wall => {
   const right = parseInt(getStyle($wall, 'right'));
-  $wall.style.right = `${right + 20}px`;
+  setStyle($wall, 'right', `${right + 20}px`);
 };
 
 /**

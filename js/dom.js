@@ -93,3 +93,8 @@ const setDomHtml = ($dom, text) => $dom.innerHTML = text;
  */
 const getDomText = $dom => $dom.textContent;
 
+/**
+ * DOMにCSSスタイルをセットします。
+ */
+const setStyle = ($dom, property, value) => $dom.style[property] = value;
+
