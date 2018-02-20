@@ -1,7 +1,7 @@
 /**
  * HTMLからアプリDOMを取得しておきます。
  */
-const $app = getById('app');
+const $app = getDomById('app');
 
 /**
  * アプリDOMにフィールドDOMを組み込みます。

@@ -32,15 +32,15 @@ const createWall = right => {
 
   // 壁(枠)DOMを生成します。
   const $wall = createDivWithClassName('wall');
-  setStyle($wall, 'right', `${right}px`);
+  setDomStyle($wall, 'right', `${right}px`);
 
   // 壁(上)DOMを生成します。
   const $wallTop = createDivWithClassName('wallTop');
-  setStyle($wallTop, 'height', `${currentHeight[0]}px`);
+  setDomStyle($wallTop, 'height', `${currentHeight[0]}px`);
 
   // 壁(下)DOMを生成します。
   const $wallBottom = createDivWithClassName('wallBottom');
-  setStyle($wallBottom, 'height', `${currentHeight[1]}px`);
+  setDomStyle($wallBottom, 'height', `${currentHeight[1]}px`);
 
   // 壁(枠)DOMに壁(上)DOMと壁(下)DOMを組み込みます。
   $wall.appendChild($wallTop);
@@ -52,11 +52,11 @@ const createWall = right => {
 /**
  * すべての壁の位置情報を返します。 
  */
-const getPositionsAllWalls = () => {
-  const $wallParts = findAll('.wallTop, .wallBottom');
+const getDomPositionsAllWalls = () => {
+  const $wallParts = findDomAll('.wallTop, .wallBottom');
   return [...$wallParts].map($wallPart => {
-    const parentPosition = getPositions($wallPart.parentNode);
-    const returnPosition = getPositions($wallPart);
+    const parentPosition = getDomPositions($wallPart.parentNode);
+    const returnPosition = getDomPositions($wallPart);
     returnPosition.left = parentPosition.left;
     returnPosition.right = parentPosition.right;
     return returnPosition;
@@ -67,15 +67,15 @@ const getPositionsAllWalls = () => {
  * 壁DOMを動かします。
  */
 const moveWall = $wall => {
-  const right = parseInt(getStyle($wall, 'right'));
-  setStyle($wall, 'right', `${right + 20}px`);
+  const right = parseInt(getDomStyle($wall, 'right'));
+  setDomStyle($wall, 'right', `${right + 20}px`);
 };
 
 /**
  * エリアからはみ出た壁DOMを削除します。
  */
 const removeWallIfProtruded = $wall => {
-  const left = parseInt(getStyle($wall, 'left'));
+  const left = parseInt(getDomStyle($wall, 'left'));
   if(left < 0) {
     removeDom($wall);
   }

@@ -7,22 +7,20 @@ setDomHtml($gameover, 'GAMEOVER<br><span>RETRY</span>');
 /**
  * ゲームオーバーDOMをクリックするとページリロードします。
  */
-$gameover.addEventListener('click', () => {
-  location.reload();
-});
+$gameover.addEventListener('click', () => location.reload());
 
 /**
  * ゲームオーバーにします。
  */
 const setGameover = () => {
-  setAttr($app, 'data-gamveover', 'true');
+  setDomAttr($app, 'data-gamveover', 'true');
   $app.appendChild($gameover);
 };
 
 /**
  * ゲームオーバーか調べます。
  */
-const isGameover = () => getAttr($app, 'data-gamveover');
+const isGameover = () => getDomAttr($app, 'data-gamveover');
 
 /**
  * キーダウンでスネークを動かします。 
@@ -70,12 +68,12 @@ const step = speed => {
 
     plusScore(10);
 
-    findAll('.wall').forEach($wall => {
+    findDomAll('.wall').forEach($wall => {
       moveWall($wall);
       removeWallIfProtruded($wall)
     });
 
-    if(getPositions(find('.wall:last-child')).right === 140) {
+    if(getDomPositions(findDom('.wall:last-child')).right === 140) {
       $field.appendChild(createWall(0));
     }
 

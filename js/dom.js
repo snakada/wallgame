@@ -1,7 +1,7 @@
 /**
  * IDを指定してDOMを見つけて返します。
  */
-const getById = id => document.getElementById(id)
+const getDomById = id => document.getElementById(id)
 
 /**
  * ID付DIVを生成して返します。
@@ -24,26 +24,30 @@ const createDivWithClassName = className => {
 /**
  * DOMを見つけて最初のものを返します。
  */
-const find = selector => document.querySelector(selector);
+const findDom = selector => document.querySelector(selector);
 
 /**
  * DOMを見つけてすべて返します。
  */
-const findAll = selector =>
-  document.querySelectorAll(selector);
+const findDomAll = selector => document.querySelectorAll(selector);
 
 /**
  * 対象となるDOMの算出スタイルのうち、
  * 指定したCSSプロパティのみを返します。
  */
-const getStyle = ($dom, property) =>
+const getDomStyle = ($dom, property) =>
   window.getComputedStyle($dom, null)[property];
+
+/**
+ * DOMにCSSスタイルをセットします。
+ */
+const setDomStyle = ($dom, property, value) => $dom.style[property] = value;
 
 /**
  * 対象となるDOMの算出スタイルのうち、
  * 指定したCSSプロパティのみを配列にして返します。
  */
-const getStyles = ($dom, properties) => {
+const getDomStyles = ($dom, properties) => {
   const styles = window.getComputedStyle($dom, null);
   return properties.map(property => styles[property]);
 };
@@ -51,9 +55,9 @@ const getStyles = ($dom, properties) => {
 /**
  * 指定したDOMの位置情報をオブジェクトで返します。
  */
-const getPositions = $dom => {
+const getDomPositions = $dom => {
   const [top, bottom, left, right, height] =
-    getStyles($dom, ['top', 'bottom', 'left', 'right', 'height']);
+    getDomStyles($dom, ['top', 'bottom', 'left', 'right', 'height']);
   return {
     top: parseInt(top),
     bottom: parseInt(bottom),
@@ -66,12 +70,12 @@ const getPositions = $dom => {
 /**
  * DOMに属性を追加します。
  */
-const setAttr = ($dom, key, value) => $dom.setAttribute(key, value);
+const setDomAttr = ($dom, key, value) => $dom.setAttribute(key, value);
 
 /**
  * DOMに指定した属性があるか調べます。
  */
-const getAttr = ($dom, key) => $dom.getAttribute(key);
+const getDomAttr = ($dom, key) => $dom.getAttribute(key);
 
 /**
  * DOMを削除します。
@@ -92,9 +96,4 @@ const setDomHtml = ($dom, text) => $dom.innerHTML = text;
  * DOMのテキストを取得します。
  */
 const getDomText = $dom => $dom.textContent;
-
-/**
- * DOMにCSSスタイルをセットします。
- */
-const setStyle = ($dom, property, value) => $dom.style[property] = value;
 

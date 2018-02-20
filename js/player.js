@@ -6,7 +6,7 @@ const $player = createDivWithId('player');
 /**
  * 現在のスネークの位置を取得します。
  */
-const getPlayerPositions = () => getPositions($player)
+const getPlayerPositions = () => getDomPositions($player)
 
 /**
  * スネークDOMが壁DOMに重なるか調べます。
@@ -36,7 +36,7 @@ const allowMovePlayer = (top, bottom, left, right) => {
   if(top < 0 || bottom < 0 || left < 0 || right < 0) {
     return false;
   }
-  return getPositionsAllWalls().every(wallPosition => {
+  return getDomPositionsAllWalls().every(wallPosition => {
     return !playerOverlapsWall(top, left, wallPosition);
   });
 };
@@ -47,7 +47,7 @@ const allowMovePlayer = (top, bottom, left, right) => {
 const playerHitWall = () => {
   const {top, left} = getPlayerPositions();
   const newLeft = left + 20;
-  return getPositionsAllWalls().some(wallPosition => {
+  return getDomPositionsAllWalls().some(wallPosition => {
     return playerOverlapsWall(top, newLeft, wallPosition);
   });
 };
@@ -62,8 +62,8 @@ const movePlayer = (moveTop, moveLeft) => {
   const newLeft = left + moveLeft;
   const newRight = right - moveLeft;
   if(allowMovePlayer(newTop, newBottom, newLeft, newRight)) {
-    setStyle($player, 'top', `${newTop}px`);
-    setStyle($player, 'left', `${newLeft}px`);
+    setDomStyle($player, 'top', `${newTop}px`);
+    setDomStyle($player, 'left', `${newLeft}px`);
   }
 };
 
