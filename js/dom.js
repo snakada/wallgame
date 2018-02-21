@@ -1,9 +1,4 @@
 /**
- * IDを指定してDOMを見つけて返します。
- */
-const getDomById = id => document.getElementById(id)
-
-/**
  * ID付DIVを生成して返します。
  */
 const createDivWithId = id => {

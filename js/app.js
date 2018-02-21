@@ -1,7 +1,12 @@
 /**
  * HTMLからアプリDOMを取得しておきます。
  */
-const $app = getDomById('app');
+const $app = createDivWithId('app');
+
+/**
+ * bodyにアプリDOMを組み込みます。
+ */
+document.body.appendChild($app);
 
 /**
  * アプリDOMにフィールドDOMを組み込みます。
