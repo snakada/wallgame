@@ -23,7 +23,7 @@ const setGameover = () => {
 const isGameover = () => getDomAttr($app, 'data-gamveover');
 
 /**
- * キーダウンでスネークを動かします。 
+ * キーダウンでプレイヤーを動かします。
  */
 document.addEventListener('keydown', event => {
   if(isGameover()) {

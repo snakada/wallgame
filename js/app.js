@@ -1,5 +1,5 @@
 /**
- * HTMLからアプリDOMを取得しておきます。
+ * アプリDOMを生成します。
  */
 const $app = createDivWithId('app');
 

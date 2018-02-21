@@ -1,15 +1,15 @@
 /**
- * HTMLからアプリDOMを取得しておきます。
+ * フィールドDOMを生成します。
  */
 const $field = createDivWithId('field');
 
 /**
- * アプリDOMにスネークDOMを組み込んでおきます。
+ * フィールドDOMにプレイヤーDOMを組み込んでおきます。
  */
 $field.appendChild($player);
 
 /**
- * アプリDOMに壁DOMを組み込んでみます。
+ * フィールドDOMに壁DOMを組み込んでみます。
  */
 $field.appendChild(createWall(280));
 $field.appendChild(createWall(140));
