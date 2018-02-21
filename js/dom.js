@@ -53,18 +53,18 @@ const getDomStyles = ($dom, properties) => {
 };
 
 /**
+ * ポジション情報に限定してCSSプロパティの配列を返します。
+ */
+const getDomPositionsArray = $dom =>
+  getDomStyles($dom, ['top', 'bottom', 'left', 'right', 'height']);
+
+/**
  * 指定したDOMの位置情報をオブジェクトで返します。
  */
 const getDomPositions = $dom => {
   const [top, bottom, left, right, height] =
-    getDomStyles($dom, ['top', 'bottom', 'left', 'right', 'height']);
-  return {
-    top: parseInt(top),
-    bottom: parseInt(bottom),
-    left: parseInt(left),
-    right: parseInt(right),
-    height: parseInt(height),
-  };
+    getDomPositionsArray($dom).map(property => parseInt(property));
+  return {top, bottom, left, right, height};
 };
 
 /**
