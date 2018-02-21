@@ -2,17 +2,22 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   padding: 200px 0 50px;
 }
 
+/**
+ * アプリ
+ */
 #app {
   position: relative;
   top: 0;
   left: 0;
 }
 
+/**
+ * フィールド
+ */
 #field {
   position: relative;
   top: 0;
@@ -24,6 +29,9 @@ body {
   margin: 0 auto;
 }
 
+/*
+ * ゲームオーバー
+ */
 #gameover {
   position: absolute;
   top: 1px;
@@ -49,6 +57,9 @@ body {
   text-decoration: underline;
 }
 
+/**
+ * プレイヤー
+ */
 #player {
   position: absolute;
   top: 0;
@@ -59,13 +70,16 @@ body {
   height: 20px;
 }
 
+/**
+ * 壁
+ */
 .wall {
   position: absolute;
   top: 0;
+  right: 0;
   width: 20px;
   height: 300px;
 }
-
 .wallTop,
 .wallBottom {
   position: absolute;
@@ -74,15 +88,16 @@ body {
   background: green;
   width: 20px;
 }
-
 .wallTop {
   top: 0;
 }
-
 .wallBottom {
   bottom: 0;
 }
 
+/**
+ * スコア
+ */
 #score {
   border-radius: 4px;
   background: #333;

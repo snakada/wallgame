@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="./css/app.css">
   </head>
   <body>
-    <script src="./js/dom.js"></script>
-    <script src="./js/score.js"></script>
-    <script src="./js/player.js"></script>
-    <script src="./js/wall.js"></script>
-    <script src="./js/field.js"></script>
-    <script src="./js/app.js"></script>
-    <script src="./js/control.js"></script>
+    <div id="app">
+      <div id="field">
+        <div id="player" style="top: 100px; left: 40px;"></div>
+        <div class="wall" style="right: 100px;">
+          <div class="wallTop" style="height: 150px;"></div>
+          <div class="wallBottom" style="height: 50px;"></div>
+        </div>
+      </div>
+      <div id="score">123</div>
+    </div>
   </body>
 </html>
 
