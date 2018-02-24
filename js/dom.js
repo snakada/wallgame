@@ -49,3 +49,10 @@ const appendDomChildren = ($parent, children) =>
  */
 const setDomText = ($dom, text) => $dom.textContent = text;
 
+/**
+ * DOMにHTMLをセットします。
+ * @param {object} $dom 処理対象のDOM
+ * @param {string} html セットするHTML
+ */
+const setDomHtml = ($dom, html) => $dom.innerHTML = html;
+
