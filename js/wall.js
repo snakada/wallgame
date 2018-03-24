@@ -29,8 +29,8 @@ const getWallHeightRandomly = () => wallHeights[getRandomIndex()];
  * 壁(枠)DOMを生成して返します。予め用意された壁の高さ配列(wallHeights)から
  * ランダムに要素を決定し、壁(上)および壁(下)のDOMも含めておきます。
  * なおこの関数では壁(枠)DOMをドキュメントに配置するわけではないことに注意してください。
- * @param  {number} 壁DOMに設定するCSSプロパティのrightの値
- * @return {object} 生成した壁DOM(枠)
+ * @param  {number} right 壁DOMに設定するCSSプロパティのrightの値
+ * @return {object}       生成した壁DOM(枠)
  */
 const createWall = right => {
   // 壁の高さをランダムに取得しておきます。
@@ -73,4 +73,25 @@ const getDomPositionsAllWalls = () => {
     returnPosition.right = parentPosition.right;
     return returnPosition;
   });
+};
+
+/**
+ * 壁(枠)DOMを現在いる位置から right + 20px 分（すなわち1列分左側へ）移動させます。
+ *
+ * @param {object} $wall 壁(枠)DOM
+ */
+const moveWall = $wall => {
+  const right = parseInt(getDomStyle($wall, 'right'));
+  setDomStyle($wall, 'right', `${right + 20}px`);
+};
+
+/**
+ * 指定した壁(枠)DOMがエリアからはみ出ていれば削除します。
+ * @param {object} $wall 壁(枠)DOM
+ */
+const removeWallIfProtruded = $wall => {
+  const left = parseInt(getDomStyle($wall, 'left'));
+  if(left < 0) {
+    removeDom($wall);
+  }
 };

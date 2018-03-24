@@ -123,3 +123,9 @@ const findDomAll = selector => document.querySelectorAll(selector);
  * @return {string}      DOMのテキスト
  */
 const getDomText = $dom => $dom.textContent;
+
+/**
+ * DOMを削除します。
+ */
+const removeDom = $dom => $dom.parentNode.removeChild($dom);
+
