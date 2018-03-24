@@ -105,10 +105,14 @@ const getDomPositions = $dom => {
 
 /**
  * DOMを見つけて最初のものを返します。
+ * @param  {string} selector DOM検索用のセレクタ
+ * @return {object}          見つかった最初のDOM
  */
 const findDom = selector => document.querySelector(selector);
 
 /**
  * DOMを見つけてすべて返します。
+ * @param  {string} selector DOM検索用のセレクタ
+ * @return {object}          見つかったDOMのリスト(NodeList)
  */
 const findDomAll = selector => document.querySelectorAll(selector);

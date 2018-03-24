@@ -23,13 +23,19 @@ appendDomChildren($wall, [$wallTop, $wallBottom]);
 
 /**
  * すべての壁の位置情報を返します。
+ * @return {object[]} pos[] すべての壁の位置情報オブジェクトの配列
+ * @return {number}   pos[].top
+ * @return {number}   pos[].bottom
+ * @return {number}   pos[].left
+ * @return {number}   pos[].right
+ * @return {number}   pos[].height
  */
 const getDomPositionsAllWalls = () => {
   const $wallParts = findDomAll('.wallTop, .wallBottom');
   return [...$wallParts].map($wallPart => {
     const parentPosition = getDomPositions($wallPart.parentNode);
     const returnPosition = getDomPositions($wallPart);
-    returnPosition.left = parentPosition.left;
+    returnPosition.left  = parentPosition.left;
     returnPosition.right = parentPosition.right;
     return returnPosition;
   });

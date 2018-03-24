@@ -7,7 +7,7 @@ setDomStyle($player, 'left', '40px');
 
 /**
  * 現在のプレイヤーの位置を取得します。
- * @return {object} pos        プレイヤーのポジション関連のCSSプロパティ値のオブジェクト
+ * @return {object} pos        プレイヤーのポジション情報のオブジェクト
  * @return {number} pos.top
  * @return {number} pos.bottom
  * @return {number} pos.left
@@ -18,6 +18,15 @@ const getPlayerPositions = () => getDomPositions($player)
 
 /**
  * プレイヤーDOMが壁DOMに重なるか調べます。
+ * @param  {number}   top                 プレイヤーDOMのtop
+ * @param  {number}   left                プレイヤーDOMのleft
+ * @param  {object[]} wallPosition        調べたい壁DOMのポジション情報のオブジェクト
+ * @param  {number}   wallPosition.top
+ * @param  {number}   wallPosition.bottom
+ * @param  {number}   wallPosition.left
+ * @param  {number}   wallPosition.right
+ * @param  {number}   wallPosition.height
+ * @return {boolean}                      プレイヤーDOMが壁DOMに重なるなら真
  */
 const playerOverlapsWall = (top, left, wallPosition) => {
   const wallLeft = wallPosition.left;
@@ -39,6 +48,11 @@ const playerOverlapsWall = (top, left, wallPosition) => {
 
 /**
  * プレイヤーDOMを動かしていい場所か調べます。
+ * @param  {number} top    プレイヤーDOMのtop
+ * @param  {number} bottom プレイヤーDOMのbottom
+ * @param  {number} left   プレイヤーDOMのleft
+ * @param  {number} right  プレイヤーDOMのright
+ * @return {boolean}       プレイヤーDOMを動かしていい場所なら真
  */
 const allowMovePlayer = (top, bottom, left, right) => {
   if(top < 0 || bottom < 0 || left < 0 || right < 0) {
