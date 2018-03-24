@@ -56,3 +56,34 @@ const setDomText = ($dom, text) => $dom.textContent = text;
  */
 const setDomHtml = ($dom, html) => $dom.innerHTML = html;
 
+/**
+ * 対象となるDOMの算出スタイルのうち、
+ * 指定したCSSプロパティのみを返します。
+ */
+const getDomStyle = ($dom, property) =>
+  window.getComputedStyle($dom, null)[property];
+
+/**
+ * 対象となるDOMの算出スタイルのうち、
+ * 指定したCSSプロパティのみを配列にして返します。
+ */
+const getDomStyles = ($dom, properties) => {
+  const styles = window.getComputedStyle($dom, null);
+  return properties.map(property => styles[property]);
+};
+
+/**
+ * ポジション情報に限定してCSSプロパティの配列を返します。
+ */
+const getDomPositionsArray = $dom =>
+  getDomStyles($dom, ['top', 'bottom', 'left', 'right', 'height']);
+
+/**
+ * 指定したDOMの位置情報をオブジェクトで返します。
+ */
+const getDomPositions = $dom => {
+  const [top, bottom, left, right, height] =
+    getDomPositionsArray($dom).map(property => parseInt(property));
+  return {top, bottom, left, right, height};
+};
+
