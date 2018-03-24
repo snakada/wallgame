@@ -87,3 +87,13 @@ const getDomPositions = $dom => {
   return {top, bottom, left, right, height};
 };
 
+/**
+ * DOMを見つけて最初のものを返します。
+ */
+const findDom = selector => document.querySelector(selector);
+
+/**
+ * DOMを見つけてすべて返します。
+ */
+const findDomAll = selector => document.querySelectorAll(selector);
+
