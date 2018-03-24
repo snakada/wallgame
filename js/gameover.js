@@ -1,6 +1,5 @@
 /**
- * フィールドDOMを生成して
- * プレイヤーDOMと壁(枠)DOMを組み込みます。
+ * ゲームオーバーDOMを生成します。 
  */
 const $gameover = createDivWithId('gameover');
 setDomHtml($gameover, 'GAMEOVER<br><span>RETRY</span>');
