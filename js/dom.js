@@ -25,7 +25,7 @@ const createDivWithClassName = className => {
  * @param {object} $dom 処理対象のDOM
  * @param {string} style 設定するCSSスタイル
  */
-const setDomStyle = ($dom, style) => $dom.setAttribute('style', style);
+const setDomStyle = ($dom, property, value) => $dom.style[property] = value;
 
 /**
  * 親DOMに子DOMを組み込みます。
