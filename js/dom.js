@@ -116,3 +116,10 @@ const findDom = selector => document.querySelector(selector);
  * @return {object}          見つかったDOMのリスト(NodeList)
  */
 const findDomAll = selector => document.querySelectorAll(selector);
+
+/**
+ * DOMのテキストを取得します。
+ * @param  {object} $dom 処理対象のDOM
+ * @return {string}      DOMのテキスト
+ */
+const getDomText = $dom => $dom.textContent;
