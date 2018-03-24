@@ -76,7 +76,8 @@ const getDomPositionsAllWalls = () => {
 };
 
 /**
- * 壁DOMを動かします。
+ * 壁(枠)DOMを現在いる位置から right + 20px 分（すなわち1列分左側へ）移動させます。
+ * @param {object} $wall 壁(枠)DOM
  */
 const moveWall = $wall => {
   const right = parseInt(getDomStyle($wall, 'right'));
@@ -84,7 +85,8 @@ const moveWall = $wall => {
 };
 
 /**
- * エリアからはみ出た壁DOMを削除します。
+ * 指定した壁(枠)DOMがエリアからはみ出ていれば削除します。
+ * @param {object} $wall 壁(枠)DOM
  */
 const removeWallIfProtruded = $wall => {
   const left = parseInt(getDomStyle($wall, 'left'));
@@ -92,4 +94,3 @@ const removeWallIfProtruded = $wall => {
     removeDom($wall);
   }
 };
-
