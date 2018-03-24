@@ -12,7 +12,6 @@ const hideGameOver = () => setDomStyle($gameover, 'display: none;');
 
 /**
  * 一旦ゲームオーバー画面は隠しておきます。
- * NOTE: あとで別のコードに移植するかもしれません。
  */
 hideGameOver();
 
