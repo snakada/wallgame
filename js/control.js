@@ -1,7 +1,15 @@
 /**
+ * ゲームオーバーか調べます。
+ */
+const isGameover = () => getDomAttr($app, 'data-gamveover');
+
+/**
  * キーダウンでプレイヤーを動かします。
  */
 document.addEventListener('keydown', event => {
+  if(isGameover()) {
+    return;
+  }
 
   plusScore(15);
 
@@ -38,6 +46,10 @@ const defaultSpeed = 500;
  */
 const step = speed => {
   const timer = setTimeout(() => {
+    if(isGameover()) {
+      return;
+    }
+
     plusScore(10);
 
     findDomAll('.wall').forEach($wall => {
