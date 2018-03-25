@@ -19,6 +19,10 @@ document.addEventListener('keydown', event => {
       movePlayerRight();
       break;
   }
+
+  if(playerHitWall()) {
+    setGameOver();
+  }
 });
 
 /**
@@ -45,6 +49,10 @@ const step = speed => {
       $field.appendChild(createWall(0));
     }
 
+    if(playerHitWall()) {
+      setGameOver();
+    }
+
     const currentScore = getCurrentScore();
     const division = Math.floor(currentScore / 10);
     const newSpeed = defaultSpeed - division;
@@ -56,3 +64,12 @@ const step = speed => {
  * 最初のタイマーを始動させます。
  */
 step(defaultSpeed);
+
+/**
+ * ゲームオーバーにします。
+ */
+const setGameOver = () => {
+  setDomAttr($app, 'data-gamveover', 'true');
+  showGameOver();
+};
+
