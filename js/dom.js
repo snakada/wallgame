@@ -134,3 +134,8 @@ const removeDom = $dom => $dom.parentNode.removeChild($dom);
  */
 const setDomAttr = ($dom, key, value) => $dom.setAttribute(key, value);
 
+/**
+ * DOMに指定した属性があるか調べます。
+ */
+const getDomAttr = ($dom, key) => $dom.getAttribute(key);
+
