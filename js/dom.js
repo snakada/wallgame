@@ -129,3 +129,11 @@ const getDomText = $dom => $dom.textContent;
  * @param {object} $dom 処理対象のDOM
  */
 const removeDom = $dom => $dom.parentNode.removeChild($dom);
+
+/**
+ * DOMに属性を追加します。
+ * @param {object} $dom  処理対象のDOM
+ * @param {string} key   属性名
+ * @param {string} value 属性値
+ */
+const setDomAttr = ($dom, key, value) => $dom.setAttribute(key, value);

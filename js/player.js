@@ -89,3 +89,15 @@ const movePlayerUp    = () => movePlayer(-20, 0);
 const movePlayerDown  = () => movePlayer(20, 0);
 const movePlayerLeft  = () => movePlayer(0, -20);
 const movePlayerRight = () => movePlayer(0, 20);
+
+/**
+ * 壁(枠)DOMがプレイヤーDOMに衝突したか調べます。
+ * @return {boolean} プレイヤーDOMがいずれかの壁(枠)DOMに衝突していれば真
+ */
+const playerHitWall = () => {
+  const {top, left} = getPlayerPositions();
+  const newLeft = left + 20;
+  return getDomPositionsAllWalls().some(wallPosition => {
+    return playerOverlapsWall(top, newLeft, wallPosition);
+  });
+};
