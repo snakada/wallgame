@@ -97,3 +97,7 @@ const findDom = selector => document.querySelector(selector);
  */
 const findDomAll = selector => document.querySelectorAll(selector);
 
+/**
+ * DOMのテキストを取得します。
+ */
+const getDomText = $dom => $dom.textContent;
