@@ -101,3 +101,9 @@ const findDomAll = selector => document.querySelectorAll(selector);
  * DOMのテキストを取得します。
  */
 const getDomText = $dom => $dom.textContent;
+
+/**
+ * DOMを削除します。
+ */
+const removeDom = $dom => $dom.parentNode.removeChild($dom);
+
