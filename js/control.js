@@ -27,7 +27,10 @@ document.addEventListener('keydown', event => {
 const defaultSpeed = 500;
 
 /**
- * タイマーを始動させます。
+ * タイマーを始動させる関数を返します。
+ * @return {function(speed)} タイマーを始動させる関数、返される関数は speed(ms) 後に
+ *                           スコア加算と壁の生成・移動・削除をおこないます。
+ *                           最後に自身を再帰呼び出しします。
  */
 const step = speed => {
   const timer = setTimeout(() => {
@@ -49,4 +52,7 @@ const step = speed => {
   }, speed);
 };
 
+/**
+ * 最初のタイマーを始動させます。
+ */
 step(defaultSpeed);

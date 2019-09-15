@@ -77,7 +77,6 @@ const getDomPositionsAllWalls = () => {
 
 /**
  * 壁(枠)DOMを現在いる位置から right + 20px 分（すなわち1列分左側へ）移動させます。
- *
  * @param {object} $wall 壁(枠)DOM
  */
 const moveWall = $wall => {
