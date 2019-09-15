@@ -31,10 +31,6 @@ const defaultSpeed = 500;
  */
 const step = speed => {
   const timer = setTimeout(() => {
-    //if(isGameover()) {
-    //  return;
-    //}
-
     plusScore(10);
 
     findDomAll('.wall').forEach($wall => {
@@ -45,10 +41,6 @@ const step = speed => {
     if(getDomPositions(findDom('.wall:last-child')).right === 140) {
       $field.appendChild(createWall(0));
     }
-
-    //if(playerHitWall()) {
-    //  setGameover();
-    //}
 
     const currentScore = getCurrentScore();
     const division = Math.floor(currentScore / 10);
