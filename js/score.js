@@ -3,4 +3,3 @@
  */
 const $score = createDivWithId('score');
 setDomText($score, '123');
-

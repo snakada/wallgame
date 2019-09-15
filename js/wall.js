@@ -20,4 +20,3 @@ setDomStyle($wallBottom, 'height', '50px');
  * 壁(枠)DOMに壁(上)と壁(下)DOMを組み込みます。
  */
 appendDomChildren($wall, [$wallTop, $wallBottom]);
-

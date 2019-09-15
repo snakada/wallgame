@@ -4,4 +4,3 @@
  */
 const $field = createDivWithId('field');
 appendDomChildren($field, [$player, $wall]);
-
