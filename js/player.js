@@ -69,10 +69,11 @@ const allowMovePlayer = (top, bottom, left, right) => {
  * @param {number} moveLeft 水平方向に動かす距離(px)
  */
 const movePlayer = (moveTop, moveLeft) => {
-  const {top, left} = getPlayerPositions();
-  const newTop  = top  + moveTop;
-  const newLeft = left + moveLeft;
-  const newRight = right - moveLeft;
+  const {top, bottom, left, right} = getPlayerPositions();
+  const newTop    = top    + moveTop;
+  const newBottom = bottom - moveTop;
+  const newLeft   = left   + moveLeft;
+  const newRight  = right  - moveLeft;
 
   if(allowMovePlayer(newTop, newBottom, newLeft, newRight)) {
     setDomStyle($player, 'top', `${newTop}px`);
