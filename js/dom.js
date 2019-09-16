@@ -60,6 +60,9 @@ const setDomHtml = ($dom, html) => $dom.innerHTML = html;
 /**
  * 対象となるDOMの算出スタイルのうち、
  * 指定したCSSプロパティのみを返します。
+ * @param  {object} $dom     処理対象のDOM
+ * @param  {string} property 取得したいCSSプロパティ名
+ * @return {string}          CSSプロパティ値
  */
 const getDomStyle = ($dom, property) =>
   window.getComputedStyle($dom, null)[property];
@@ -67,6 +70,9 @@ const getDomStyle = ($dom, property) =>
 /**
  * 対象となるDOMの算出スタイルのうち、
  * 指定したCSSプロパティのみを配列にして返します。
+ * @param  {object}   $dom     処理対象のDOM
+ * @param  {string[]} property 取得したいCSSプロパティ名の配列
+ * @return {string[]}          CSSプロパティ値の配列
  */
 const getDomStyles = ($dom, properties) => {
   const styles = window.getComputedStyle($dom, null);
@@ -75,12 +81,21 @@ const getDomStyles = ($dom, properties) => {
 
 /**
  * ポジション情報に限定してCSSプロパティの配列を返します。
+ * @param  {object}   $dom 処理対象のDOM
+ * @return {string[]}      ポジション関連のCSSプロパティ値の配列
  */
 const getDomPositionsArray = $dom =>
   getDomStyles($dom, ['top', 'bottom', 'left', 'right', 'height']);
 
 /**
  * 指定したDOMの位置情報をオブジェクトで返します。
+ * @param  {object} $dom       処理対象のDOM
+ * @return {object} pos        ポジション関連のCSSプロパティ値のオブジェクト
+ * @return {string} pos.top
+ * @return {string} pos.bottom
+ * @return {string} pos.left
+ * @return {string} pos.right
+ * @return {string} pos.height
  */
 const getDomPositions = $dom => {
   const [top, bottom, left, right, height] =

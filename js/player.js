@@ -24,7 +24,11 @@ const movePlayer = (moveTop, moveLeft) => {
   setDomStyle($player, 'left', `${newLeft}px`);
 };
 
-const movePlayerUp = () => movePlayer(-20, 0);
-const movePlayerDown = () => movePlayer(20, 0);
-const movePlayerLeft = () => movePlayer(0, -20);
+/**
+ * プレイヤーDOMを上下左右へ1マス分(20px)移動させる
+ * 関数をそれぞれ定義しておきます。
+ */
+const movePlayerUp    = () => movePlayer(-20, 0);
+const movePlayerDown  = () => movePlayer(20, 0);
+const movePlayerLeft  = () => movePlayer(0, -20);
 const movePlayerRight = () => movePlayer(0, 20);
