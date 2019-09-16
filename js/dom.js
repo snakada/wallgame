@@ -91,11 +91,11 @@ const getDomPositionsArray = $dom =>
  * 指定したDOMの位置情報をオブジェクトで返します。
  * @param  {object} $dom       処理対象のDOM
  * @return {object} pos        ポジション関連のCSSプロパティ値のオブジェクト
- * @return {string} pos.top
- * @return {string} pos.bottom
- * @return {string} pos.left
- * @return {string} pos.right
- * @return {string} pos.height
+ * @return {number} pos.top
+ * @return {number} pos.bottom
+ * @return {number} pos.left
+ * @return {number} pos.right
+ * @return {number} pos.height
  */
 const getDomPositions = $dom => {
   const [top, bottom, left, right, height] =
