@@ -68,10 +68,10 @@ const allowMovePlayer = (top, bottom, left, right) => {
  */
 const movePlayer = (moveTop, moveLeft) => {
   const {top, bottom, left, right} = getPlayerPositions();
-  const newTop = top + moveTop;
+  const newTop    = top    + moveTop;
   const newBottom = bottom - moveTop;
-  const newLeft = left + moveLeft;
-  const newRight = right - moveLeft;
+  const newLeft   = left   + moveLeft;
+  const newRight  = right  - moveLeft;
 
   if(allowMovePlayer(newTop, newBottom, newLeft, newRight)) {
     setDomStyle($player, 'top', `${newTop}px`);
