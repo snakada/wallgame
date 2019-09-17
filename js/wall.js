@@ -15,16 +15,22 @@ const wallHeights = [
 
 /**
  * 壁の高さ配列からランダムなインデックスを返します。
+ * @return {number} 壁の高さ配列(wallHeights)の任意の要素のインデックス
  */
 const getRandomIndex = () => Math.floor(Math.random() * wallHeights.length);
 
 /**
  * 壁の高さを定義されたものからランダムに選んで返します。
+ * @return {number[]} 壁の高さ配列(wallHeights)のうち任意の要素
  */
-const getWallHeightRandomly = () => wallHeights[getRandomIndex()];///**
+const getWallHeightRandomly = () => wallHeights[getRandomIndex()];
 
 /**
- * 壁DOMを生成して返します。
+ * 壁(枠)DOMを生成して返します。予め用意された壁の高さ配列(wallHeights)から
+ * ランダムに要素を決定し、壁(上)および壁(下)のDOMも含めておきます。
+ * なおこの関数では壁(枠)DOMをドキュメントに配置するわけではないことに注意してください。
+ * @param  {number} right 壁DOMに設定するCSSプロパティのrightの値
+ * @return {object}       生成した壁DOM(枠)
  */
 const createWall = right => {
   // 壁の高さをランダムに取得しておきます。
