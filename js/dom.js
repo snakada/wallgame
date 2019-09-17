@@ -126,6 +126,6 @@ const getDomText = $dom => $dom.textContent;
 
 /**
  * DOMを削除します。
+ * @param {object} $dom 処理対象のDOM
  */
 const removeDom = $dom => $dom.parentNode.removeChild($dom);
-
