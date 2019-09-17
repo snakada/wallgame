@@ -1,7 +1,10 @@
 /**
  * ゲームオーバーか調べます。
+ * @return {boolean} ゲームオーバーなら真。なおゲームオーバー状態をつくるのは
+ *                   本ファイルの step() 内で起点し playerHitWall() で判定のうえ、
+ *                   setGameOver() によってフラグを立てあります。
  */
-const isGameover = () => getDomAttr($app, 'data-gamveover');
+const isGameover = () => getDomAttr($app, 'data-gamveover') === 'true';
 
 /**
  * キーダウンでプレイヤーを動かします。
@@ -84,4 +87,3 @@ const setGameOver = () => {
   setDomAttr($app, 'data-gamveover', 'true');
   showGameOver();
 };
-
